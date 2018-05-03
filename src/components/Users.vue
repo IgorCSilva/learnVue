@@ -1,17 +1,18 @@
 <template lang="pug">
-  div#users
-    h1 Users
-    form(@submit='addUser')
-        input(type='text' v-model='newUser.name' placeholder='Enter name')
-        br
-        input(type='text' v-model='newUser.email' placeholder='Enter email')
-        br
-        input(type='submit' value='Submit') 
-    ul
-        li(v-for='user in users')
-            input.toogle(type='checkbox' v-model='user.contacted')
-            span(:class="{contacted: user.contacted}") {{user.name}}: {{user.email}}
-            button(@click='deleteUser(user)') x
+    div#users
+        h1 Users
+        form(@submit='addUser')
+            input(type='text' v-model='newUser.name' placeholder='Enter name')
+            br
+            input(type='text' v-model='newUser.email' placeholder='Enter email')
+            br
+            input(type='submit' value='Submit') 
+        ul
+            li(v-for='user in users')
+                input.toogle(type='checkbox' v-model='user.contacted')
+                span(:class="{contacted: user.contacted}") {{user.name}}: {{user.email}}
+                button(@click='deleteUser(user)') x
+        
   
 </template>
 
@@ -19,6 +20,7 @@
 
 export default {
   name: 'users',
+  
 
   data() {
     return {
