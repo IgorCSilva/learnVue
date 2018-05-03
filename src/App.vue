@@ -33,20 +33,18 @@ export default {
   border-style: solid;
   border-color: orangered;
   padding: 15px;
-  color: #2c3e50;
-  
+  color: #2c3e50;  
 }
+
+
 
   #content {
  
     border-style: solid;
     border-width: 2px;
-    border-color: crimson ;
+    border-color: darkolivegreen ;
     margin: 5px 0 5px 0;
     
   }
 
-h3 {
-  color: orangered;
-}
 </style>

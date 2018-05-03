@@ -1,7 +1,7 @@
 <template lang="pug">
   div#navg
-    h2 Navegation 
-    router-link(v-for="path in paths" key="path.path" :to="path.path" )
+    h3 Navegation 
+    router-link(v-for="path in paths" :key="path.path" :to="path.path" )
         button {{ path.name }}
     
 </template>
@@ -9,21 +9,19 @@
 <script>
 
     import router from '@/router'
+    import vars from '@/variaveis/vars'
 
     export default {
         name: 'Navg',
 
-        components: {
-            router
+        components: { 
+            router,
         },
+
 
         data () {
             return {
-                paths: [
-                    {name: 'Home', path: '/'},
-                    {name: 'Users', path: '/users'},
-                    {name: 'Tests', path: '/test'},
-                ]
+                paths: vars.routes
             }
         }
     }
@@ -38,7 +36,4 @@
         border-color: blueviolet ;
     }
 
-    h2 {
-    font-weight: bold;
-    }
 </style>
