@@ -7,6 +7,7 @@ import Test from '@/components/Test'
 import Colors from '@/components/w3_css/Colors'
 import Containers from '@/components/w3_css/Containers'
 import Panels from '@/components/w3_css/Panels'
+import Trsey from '@/components/algoritmos/Trsey'
 
 const routes = [    
     {name: 'Home', path: '/', component: HelloWorld},
@@ -16,6 +17,8 @@ const routes = [
     {name: 'Colors', path: '/colors', component: Colors},    
     {name: 'Containers', path: '/containers', component: Containers},    
     {name: 'Panels', path: '/panels', component: Panels},    
+    
+    {name: 'Trsey', path: '/trsey', component: Trsey},    
   ]
 
 export default { routes }
