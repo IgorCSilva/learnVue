@@ -7,7 +7,11 @@ import Test from '@/components/Test'
 import Colors from '@/components/w3_css/Colors'
 import Containers from '@/components/w3_css/Containers'
 import Panels from '@/components/w3_css/Panels'
+
 import Trsey from '@/components/algoritmos/Trsey'
+
+import Chart from '@/components/dataVis/Chart'
+import Plotly from '@/components/dataVis/Plotly'
 
 const routes = [    
     {name: 'Home', path: '/', component: HelloWorld},
@@ -19,6 +23,9 @@ const routes = [
     {name: 'Panels', path: '/panels', component: Panels},    
     
     {name: 'Trsey', path: '/trsey', component: Trsey},    
+
+    {name: 'Chart', path: '/chart', component: Chart},
+    {name: 'Plotly', path: '/plotly', component: Plotly},    
   ]
 
 export default { routes }

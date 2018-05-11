@@ -1,6 +1,6 @@
 <<template lang="pug">
     div#trsey
-        h3 Trsey
+        h3 Trsey {{ qtd_comb}}
         div(v-for="(mat, index) in listMat") ({{ mat.max0}}, {{ mat.max1}}) - {{ mat.num }} 
             //div(v-for="linha in mat.mat") {{ linha }}
             br
@@ -13,19 +13,24 @@ export default {
 
   created: function(){
 
-    var qtd_vertices = 7
+    var qtd_vertices = 5
     var qtd_cell = qtd_vertices * (qtd_vertices - 1) / 2    
     
     var qtd_comb = Math.pow(2, qtd_cell)
-    
+    this.qtd_comb = qtd_comb
     var conjMat = []
     var comb_2_color = []
 
-    for(var n = 0; n < qtd_comb/2 + 1; n++){
+    var max_0 = -1
+    var max_1 = -2
+
+    var par_de = 3
+    
+    for(var n = 0; (n < qtd_comb/2 + 1) && (max_0 != par_de || max_1 != par_de); n++){
         
         var bin_rev = ((n >>> 0).toString(2)).split("")        
 
-        //console.log(bin_rev)
+        console.log(n)
 
         var bin_completo = []
 
@@ -55,8 +60,8 @@ export default {
                 mat.push(linha)
             }
             
-            var max_0 = 0
-            var max_1 = 0
+            max_0 = 0
+            max_1 = 0
 
             var m = 6
 
@@ -129,53 +134,23 @@ export default {
                 conjMat.push({
                     max0: max_0,
                     max1: max_1,
-                    num: comb
+                    comb: comb,
+                    num: n
                 })
             }
 
-            // if(conjMat.length > 0){
-            //     if( conjMat[conjMat.length - 1].max0 != max_0 ||
-            //         conjMat[conjMat.length - 1].max1 != max_1){
-
-            //         conjMat.push({
-            //             max0: max_0,
-            //             max1: max_1,
-            //             num: n
-            //         })
-            //     }
-            // }else {
-            //     conjMat.push({
-            //         max0: max_0,
-            //         max1: max_1,
-            //         num: n
-            //     })
-            // }
+            
     }
 
-    // var filter = []
-    // conjMat = conjMat.sort(function(a, b){
-    //     return (a.max0 > b.max0 ? -10 : 10)
-    // })
-
-    // conjMat.forEach(function(element) {
-    //     if(filter.length > 0){
-    //         if(element.max0 != filter[filter.length - 1].max0 ||
-    //         element.max1 != filter[filter.length - 1].max1 ){
-    //             filter.push(element)
-    //         }
-    //     }else {
-    //         filter.push(element)
-    //     }
-    // }, this);
-
-    //this.listMat = conjMat
+    
     console.log(conjMat)
   },
 
   data() {
       return {
         bin: [[1,2],[3,4]],
-        listMat: []   
+        listMat: [],
+        qtd_comb: 0
 
       }
   },
