@@ -22,7 +22,7 @@
         | Say Greeting
 
     div 
-      h3 # keyup 
+      h3 # keyup  (olhar no console)
       input(type='text' @keyup='pressKey' @keyup.enter='enterHit')
 
     div 
@@ -38,6 +38,26 @@
     div 
       h3 #
       h2 {{ msg }}
+
+    div
+      h3 # Mouse move
+      p(v-on:mousemove="updateCoord") Coordinates: {{ x }} / {{ y }}
+        span(v-on:mousemove.stop="") - DEAD SPOT
+
+    div 
+      h3 # watch 
+      button(@click="counter++") Increase
+      p {{ counter }}
+
+    div 
+      h3 # Dynamic Styling
+      div.demo(@click="attachRed = !attachRed" :class="{red: attachRed}")
+      div.demo(@click="attachRed = !attachRed" :class="{blue: attachRed}")
+      div.demo(@click="attachRed = !attachRed" :class="divClasses")
+      div.demo(:class="colorStyle")
+      p Type a color: blue or red
+      input(type="text" v-model="colorStyle")
+      
   
 </template>
 
@@ -63,7 +83,15 @@ export default {
         {title: 'Item 1'},
         {title: 'Item 2'},
         {title: 'Item 3'},
-      ]
+      ],
+
+      x: 0,
+      y: 0,
+
+      counter: 0,
+
+      attachRed: false,
+      colorStyle: ''
     }
   },
 
@@ -80,6 +108,11 @@ export default {
 
     enterHit: function(){
       console.log('You hit enter!')
+    },
+
+    updateCoord: function(event) {
+      this.x = event.clientX
+      this.y = event.clientY
     }
   },
 
@@ -88,8 +121,26 @@ export default {
       return (
         this.user.firstName + ' ' + this.user.lastName
       )
+    },
+
+    divClasses: function(){
+      return (
+        {
+          red: this.attachRed,
+          blue: !this.attachRed
+        }
+        
+      )
     }
   },
+
+  watch: {
+    counter: function(value){
+      var vthis = this
+      console.log('watch')
+      setTimeout(() => { vthis.counter = 0}, 2000)
+    }
+  }
 }
 </script>
 
@@ -102,5 +153,20 @@ export default {
 
 h3 {
   color: orangered;
+}
+
+.demo {
+  width: 100px;
+  height: 100px;
+  background-color: #2c3e50;
+  display: inline-block;
+  margin: 10px;
+}
+
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
 }
 </style>

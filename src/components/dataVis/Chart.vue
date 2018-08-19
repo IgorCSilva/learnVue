@@ -29,14 +29,14 @@ export default {
 
             var chart = new Chart(ctx, {
                 // The type of chart we want to create
-                type: 'line',
+                type: 'polarArea',
 
                 // The data for our dataset
                 data: {
                     labels: ["January", "February", "March", "April", "May", "June", "July"],
                     datasets: [{
                         label: "My First dataset",
-                        backgroundColor: 'rgb(255, 99, 132)',
+                        backgroundColor: ['rgb(255, 99, 132)','rgb(205, 99, 32)','rgb(250, 09, 132)','rgb(055, 99, 132)','rgb(205, 99, 130)','rgb(255, 99, 102)','rgb(255, 09, 132)',],
                         borderColor: 'rgb(215, 9, 132)',
                         borderWidth: 5,
                         data: [0, 10, 5, 2, 20, 30, 45],
@@ -44,7 +44,11 @@ export default {
                 },
 
                 // Configuration options go here
-                options: {}
+                options: {
+                    onClick: function(dataset){
+                        console.log(dataset)
+                        }
+                }
             });
 
         }
