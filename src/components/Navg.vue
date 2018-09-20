@@ -2,7 +2,7 @@
   div#navg
     h3 Navegation 
     router-link(v-for="path in paths" :key="path.path" :to="path.path" )
-        button {{ path.name }}
+        button.w3-btn.w3-blue.w3-round(style="margin: 1px" v-if="path.name != undefined") {{ path.name }}
     
 </template>
 

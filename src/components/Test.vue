@@ -57,6 +57,10 @@
       div.demo(:class="colorStyle")
       p Type a color: blue or red
       input(type="text" v-model="colorStyle")
+
+    div 
+      h3 # refs
+      button(@click="change" ref="myButton") Click me
       
   
 </template>
@@ -113,6 +117,10 @@ export default {
     updateCoord: function(event) {
       this.x = event.clientX
       this.y = event.clientY
+    },
+
+    change: function(){
+      this.$refs.myButton.innerText = 'Clicked!'
     }
   },
 

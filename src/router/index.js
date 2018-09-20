@@ -3,7 +3,6 @@ import Router from 'vue-router'
 
 import vars from '@/variaveis/vars'
 
-
 Vue.use(Router)
 
 export default new Router({
