@@ -32,6 +32,8 @@ import DetailRouter from '../components/router/user/components/UserDetail.vue'
 import EditRouter from '../components/router/user/components/UserEdit.vue'
 import StartRouter from '../components/router/user/components/UserStart.vue'
 
+import Css from '../components/css/Css.vue'
+
 import AppVuex from '../components/vuex/AppVuex.vue'
 
 
@@ -69,8 +71,9 @@ const routes = [
     {path: '/router/userRouter', component: UserRouter},    
     {path: '/router/detailrouter', component: DetailRouter},    
     {path: '/router/editrouter', component: EditRouter},    
-    {path: '/router/startrouter', component: StartRouter},    
+    {path: '/router/startrouter', component: StartRouter},
 
+    {name: 'Css', path: '/css', component: Css},    
     
     {name: 'Vuex', path: '/vuex', component: AppVuex},    
   ]
