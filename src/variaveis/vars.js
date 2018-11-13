@@ -35,6 +35,7 @@ import StartRouter from '../components/router/user/components/UserStart.vue'
 import Css from '../components/css/Css.vue'
 
 import VueMaterial from '../components/vueMaterial/VueMaterial.vue'
+import Pug from '../components/pug/Pug.vue'
 
 import AppVuex from '../components/vuex/AppVuex.vue'
 
@@ -80,6 +81,8 @@ const routes = [
     {name: 'Vue Material', path: '/vueMaterial', component: VueMaterial},    
     
     {name: 'Vuex', path: '/vuex', component: AppVuex},    
+
+    {name: 'Pug', path: '/pug', component: Pug},    
   ]
 
 export default { routes }

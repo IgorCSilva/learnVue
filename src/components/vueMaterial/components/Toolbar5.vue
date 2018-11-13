@@ -5,29 +5,25 @@
     //- Para instalar o Vue Material: npm install vue-material --save
     //- Usando fonte e ícones: <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
     
-    #toolbar3
+    #toolbar5
 
         .page-container
             
-            p Toolbar Flexible
+            p Toolbar Overlap
 
             md-app(
-                md-mode="flexible"
+                md-mode="overlap"
                 md-waterfall
             )
                 md-app-toolbar.md-large.md-primary
+
                     div.md-toolbar-row
-                        div.md-toolbar-section-start
-                            md-button.md-icon-button(
-                                @click="menuVisible = !menuVisible"
-                            )
-                                md-icon menu 
-
-                        div.md-toolbar-section-end
-                            md-button.md-icon-button
-                                md-icon more_vert 
-
-                    div.md-toolbar-row.md-toolbar-offset
+                    
+                        md-button.md-icon-button(
+                            @click="menuVisible = !menuVisible"
+                        )
+                            md-icon menu 
+                        
                         span.md-display-1 My Title
                 
                 md-app-drawer(
@@ -72,7 +68,7 @@
 <script>
 export default {
 
-    name: 'Flexible',
+    name: 'Overlapping',
     data() {
         return {
             menuVisible: false
@@ -91,13 +87,16 @@ export default {
 
     .md-app-toolbar {
         background-color: aquamarine;
-        height: 196px;
     }
 
     .md-drawer {
         width: 230px;
         max-width: calc(100vw - 125px);
         background-color: white;
+    }
+
+    .md-app-content {
+        background-color: whitesmoke;
     }
 </style>
 

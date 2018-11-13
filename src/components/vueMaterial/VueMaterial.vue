@@ -13,6 +13,8 @@
         toolbar1.paddingBottom
         toolbar2.paddingBottom
         toolbar3.paddingBottom
+        toolbar4.paddingBottom
+        toolbar5.paddingBottom
         
 
 
@@ -23,6 +25,8 @@
     import Toolbar1 from './components/Toolbar1.vue'
     import Toolbar2 from './components/Toolbar2.vue'
     import Toolbar3 from './components/Toolbar3.vue'
+    import Toolbar4 from './components/Toolbar4.vue'
+    import Toolbar5 from './components/Toolbar5.vue'
 
 export default {    
     components: {
@@ -30,6 +34,8 @@ export default {
         Toolbar1,
         Toolbar2,
         Toolbar3,
+        Toolbar4,
+        Toolbar5,
     }
 }
 </script>
