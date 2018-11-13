@@ -11,6 +11,13 @@ import { store } from './components/vuex/store/store'
 import vueResource from 'vue-resource'
 Vue.use(vueResource)
 
+// Importando Vue Material Design
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
+
+Vue.use(VueMaterial)
+
+
 Vue.config.productionTip = false
 
 // Bus para comunicação direta entre filhos.

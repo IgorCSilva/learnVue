@@ -34,6 +34,8 @@ import StartRouter from '../components/router/user/components/UserStart.vue'
 
 import Css from '../components/css/Css.vue'
 
+import VueMaterial from '../components/vueMaterial/VueMaterial.vue'
+
 import AppVuex from '../components/vuex/AppVuex.vue'
 
 
@@ -73,7 +75,9 @@ const routes = [
     {path: '/router/editrouter', component: EditRouter},    
     {path: '/router/startrouter', component: StartRouter},
 
-    {name: 'Css', path: '/css', component: Css},    
+    {name: 'Css', path: '/css', component: Css},   
+
+    {name: 'Vue Material', path: '/vueMaterial', component: VueMaterial},    
     
     {name: 'Vuex', path: '/vuex', component: AppVuex},    
   ]
